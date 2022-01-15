@@ -24,6 +24,7 @@
   "type": "module",
   "dependencies": {
     "@sanity/client": "^2.23.0",
-    "@sanity/image-url": "^1.0.1"
+    "@sanity/image-url": "^1.0.1",
+    "svelte-material-ui": "^6.0.0-beta.13"
   }
 }
