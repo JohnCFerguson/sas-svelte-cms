@@ -1,15 +1,15 @@
 <script>
   import SanityImage from './SanityImage.svelte'
 
-  export let author
+  export let teammate
 </script>
 
-{#if author?.name}
-  <a href="/authors/{author.slug.current}">
+{#if teammate?.name}
+  <a href="/team/{teammate.slug.current}">
     <span>
-      <SanityImage image={author.image} maxWidth={40} />
+      <SanityImage image={teammate.image} maxWidth={40} />
     </span>
-    {author.name}
+    {teammate.name}
   </a>
 {/if}
 
