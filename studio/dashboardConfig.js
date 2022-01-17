@@ -19,7 +19,7 @@ export default {
                 {
                   buildHookId: '',
                   title: 'Sanity Studio',
-                  name: 'sas-svelte-cms-studio-xsmsudma',
+                  name: 'sas-svelte-cms-studio',
                   apiId: '642bd3d6-892f-4897-9f60-7c4b752b2f32'
                 },
                 {

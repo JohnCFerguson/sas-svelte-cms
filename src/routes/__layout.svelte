@@ -3,7 +3,7 @@
   import Footer from '$lib/Footer.svelte'
 </script>
 
-<Header blogTitle={'SvelteKit x Sanity Blog'} />
+<Header />
 
 <main style="padding: 1em">
   <slot />
@@ -13,10 +13,21 @@
 
 <style>
   :global(a) {
-    color: #1a4d9e;
+    border-bottom: none;
   }
   :global(a:hover) {
-    color: #1e61cd;
     border-bottom: none;
+  }
+  :global(body) {
+    background-color: #fff;
+    color: #8a807b;
+    margin: 0;
+  }
+  @font-face {
+    font-family: 'StayClassyDuoSerif';
+    src: url('./../fonts/StayClassyDuoSerif.otf') format('otf');
+  }
+  * {
+    font-family: 'StayClassyDuoSerif';
   }
 </style>
