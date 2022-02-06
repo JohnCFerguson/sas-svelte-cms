@@ -17,6 +17,8 @@
 
   // Once loaded, the image will transition to full opacity
   let loaded = false
+
+  console.log()
 </script>
 
 {#if image}

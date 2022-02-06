@@ -4,7 +4,6 @@
 
 <script>
   import {onMount} from 'svelte'
-  import Image from 'svelte-image'
   import Instagram from 'svelte-material-icons/Instagram.svelte'
 
   let path
@@ -42,12 +41,10 @@
 <header>
   <nav class="grid-container">
     <div class="grid-child logo">
-      <Image
+      <img
         class="logo"
         src="/logos/S+S-Logo-0221_Full Color Logo Horizontal .png"
         alt="Sand and Sagebrush Logo"
-        sizes=[300,500]
-        breakpoints=[767]
       />
     </div>
     <div class="inner grid-child">
@@ -79,8 +76,8 @@
     src: url('./../fonts/StayClassyDuoSerif.otf') format('otf');
   }
   .logo {
-    height: 75px;
-    max-width: 300px;
+    max-width: 350px;
+    z-index: 0;
   }
   nav {
     height: 75px;
@@ -92,8 +89,12 @@
   a {
     font-family: 'StayClassyDuoSerif';
   }
+  .wrapper, .placeholder {
+    height: 75px;
+  }
   .inner {
     max-width: 980px;
+    padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
@@ -113,6 +114,7 @@
   .mobile-icon:after,
   .mobile-icon:before,
   .middle-line {
+    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -207,6 +209,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0;
+    z-index: -1;
   }
 
   @media only screen and (min-width: 767px) {
@@ -228,7 +231,7 @@
       position: inherit;
     }
     .logo {
-      max-width: 500px;
+      max-width: 600px;
       /* position: fixed;
       left: 0;
       top: 0; */

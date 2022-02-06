@@ -12,7 +12,7 @@
 <Footer />
 
 <style>
-  :global(a) {
+  :global(a, h1) {
     border-bottom: none;
     font-family: 'StayClassyDuoSerif';
   }
