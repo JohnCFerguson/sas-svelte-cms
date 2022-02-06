@@ -14,20 +14,21 @@
 <style>
   :global(a) {
     border-bottom: none;
+    font-family: 'StayClassyDuoSerif';
   }
   :global(a:hover) {
     border-bottom: none;
   }
   :global(body) {
     background-color: #fff;
-    color: #8a807b;
+    color: rgb(138, 128, 123);
     margin: 0;
   }
   @font-face {
     font-family: 'StayClassyDuoSerif';
     src: url('./../fonts/StayClassyDuoSerif.otf') format('otf');
   }
-  * {
+:global(a) {
     font-family: 'StayClassyDuoSerif';
   }
 </style>

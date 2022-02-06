@@ -16,6 +16,13 @@ export function getPostsQuery(extraFilter) {
   }`
 }
 
+export function getTeamQuery(extraFilter) {
+  return /* groq */ `*[
+    _type == "teammate"
+    ${extraFilter ? `&& ${extraFilter}` : ''}
+  ]`
+}
+
 /**
  * You can also re-use parts of projections as fragments.
  * In this case, we're defining that, to render an author card, we need their name, slug & image.
