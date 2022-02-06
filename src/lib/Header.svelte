@@ -4,6 +4,7 @@
 
 <script>
   import {onMount} from 'svelte'
+  import Image from 'svelte-image'
   import Instagram from 'svelte-material-icons/Instagram.svelte'
 
   let path
@@ -13,9 +14,9 @@
 
   // List of navigation items
   const navItems = [
-    {label: 'Book Now', href: 'book'},
-    {label: 'The Team', href: 'salon'},
-    {label: 'The Salon', href: 'team'},
+    {label: 'Book Now', href: '/book'},
+    {label: 'The Team', href: '/team'},
+    {label: 'The Salon', href: '/salon'},
     {label: 'Insta', href: 'https://www.instagram.com/sandandsagebrush/'}
   ]
 
@@ -40,11 +41,13 @@
 
 <header>
   <nav class="grid-container">
-    <div class="grid-child">
-      <img
+    <div class="grid-child logo">
+      <Image
         class="logo"
         src="/logos/S+S-Logo-0221_Full Color Logo Horizontal .png"
         alt="Sand and Sagebrush Logo"
+        sizes=[300,500]
+        breakpoints=[767]
       />
     </div>
     <div class="inner grid-child">
@@ -76,11 +79,18 @@
     src: url('./../fonts/StayClassyDuoSerif.otf') format('otf');
   }
   .logo {
+    height: 75px;
     max-width: 300px;
   }
   nav {
     height: 75px;
     background-color: #f1dcd4;
+  }
+  .grand-child {
+    height: 75px
+  }
+  a {
+    font-family: 'StayClassyDuoSerif';
   }
   .inner {
     max-width: 980px;
@@ -91,7 +101,6 @@
     align-items: center;
     height: 100%;
   }
-
   .mobile-icon {
     width: 25px;
     height: 14px;
@@ -104,7 +113,6 @@
   .mobile-icon:after,
   .mobile-icon:before,
   .middle-line {
-    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -177,7 +185,6 @@
   }
 
   .navbar-list li:before {
-    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -216,7 +223,6 @@
     .navbar-list a {
       display: inline-flex;
       margin-top: 0;
-      align-items: inherit;
     }
     .navbar-list li {
       position: inherit;
