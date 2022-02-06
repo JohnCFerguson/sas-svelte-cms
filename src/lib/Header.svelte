@@ -41,11 +41,13 @@
 <header>
   <nav class="grid-container">
     <div class="grid-child logo">
-      <img
-        class="logo"
-        src="/logos/S+S-Logo-0221_Full Color Logo Horizontal .png"
-        alt="Sand and Sagebrush Logo"
-      />
+      <a href="/">
+        <img
+          class="logo"
+          src="/logos/S+S-Logo-0221_Full Color Logo Horizontal .png"
+          alt="Sand and Sagebrush Logo"
+        />
+      </a>
     </div>
     <div class="inner grid-child">
       <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
@@ -55,13 +57,13 @@
         {#each navItems as item}
           {#if item.label == 'Insta'}
             <li>
-              <a href={item.href}>
+              <a on:click={handleMobileIconClick} href={item.href}>
                 <Instagram color="#8a807b" size="2em" />
               </a>
             </li>
           {:else}
             <li>
-              <a href={item.href}>{item.label}</a>
+              <a on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
             </li>
           {/if}
         {/each}
@@ -82,6 +84,7 @@
   nav {
     height: 75px;
     background-color: #f1dcd4;
+    box-shadow: 1px 2px 5px #000;
   }
   .grand-child {
     height: 75px

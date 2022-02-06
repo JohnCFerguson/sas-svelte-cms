@@ -46,7 +46,7 @@
 
 <div class="team">
     <h1>Meet the Team</h1>
-
+    <hr />
     <MaterialApp>
         {#each teammates as teammate}
             <div class="d-flex justify-center mt-4 mb-4" bind:clientWidth={w}>
@@ -79,8 +79,13 @@
 <style>
     h1 {
         font-family: 'StayClassyDuoSerif';
+        font-size: 3em;
     }
     .team {
         text-align: center;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px 1px#000;
+        margin-top: 40px;
+        padding: 5px;
     }
 </style>
