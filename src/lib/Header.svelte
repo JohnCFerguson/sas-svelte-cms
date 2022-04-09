@@ -63,12 +63,14 @@
             </li>
           {:else}
             <li>
-              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
+              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}
+                >{item.label}</a
+              >
             </li>
           {/if}
         {/each}
       </ul>
-      <ul class={`navbar-list ${showMobileMenu ? 'mobile-show': 'mobile-hide'}`}>
+      <ul class={`navbar-list ${showMobileMenu ? 'mobile-show' : 'mobile-hide'}`}>
         {#each navItems as item}
           {#if item.label == 'Insta'}
             <li>
@@ -78,7 +80,9 @@
             </li>
           {:else}
             <li>
-              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
+              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}
+                >{item.label}</a
+              >
             </li>
           {/if}
         {/each}
@@ -102,18 +106,19 @@
     box-shadow: 1px 2px 5px #000;
   }
   .grand-child {
-    height: 5em
+    height: 5em;
   }
   a {
     font-family: 'StayClassyDuoSerif';
   }
-  .wrapper, .placeholder {
+  .wrapper,
+  .placeholder {
     height: 5em;
   }
   .inner {
     max-width: 980px;
     padding-bottom: 2em;
-    padding-left: .5em;
+    padding-left: 0.5em;
     padding-right: 2em;
     box-sizing: border-box;
     display: grid;
@@ -126,7 +131,7 @@
     position: absolute;
     cursor: pointer;
     right: 0px;
-    margin-right: .5em;
+    margin-right: 0.5em;
     margin-top: 2em;
   }
 
