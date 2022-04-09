@@ -67,6 +67,11 @@
         padding: 5px;
     }
     h1 {
+        font-family: 'StayClassyDuoSerif';
+        font-size: 3em;
         text-align: center;
+    }
+    p {
+      font-family: 'StayClassyDuoSerif';
     }
 </style>

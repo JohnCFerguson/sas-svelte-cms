@@ -20,8 +20,9 @@
   ]
 
   // Mobile menu click event handler
-  const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu)
-
+  const handleMobileIconClick = () => {
+    showMobileMenu = !showMobileMenu
+  }
   // Media match query handler
   const mediaQueryHandler = (e) => {
     // Reset mobile state
@@ -50,10 +51,25 @@
       </a>
     </div>
     <div class="inner grid-child">
-      <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
+      <div on:click={handleMobileIconClick} class={`mobile-icon ${showMobileMenu ? 'active' : ''}`}>
         <div class="middle-line" />
       </div>
-      <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+      <ul class={`navbar-list expanded`}>
+        {#each navItems as item}
+          {#if item.label == 'Insta'}
+            <li>
+              <a on:click={handleMobileIconClick} href={item.href}>
+                <Instagram color="#8a807b" size="2em" />
+              </a>
+            </li>
+          {:else}
+            <li>
+              <a on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
+            </li>
+          {/if}
+        {/each}
+      </ul>
+      <ul class={`navbar-list ${showMobileMenu ? 'mobile-show': 'mobile-hide'}`}>
         {#each navItems as item}
           {#if item.label == 'Insta'}
             <li>
@@ -174,7 +190,7 @@
     padding: 0 40px;
   }
 
-  .navbar-list.mobile {
+  .navbar-list.mobile-show {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     display: block;
@@ -183,7 +199,6 @@
     left: 0;
     z-index: 999999;
   }
-
   .navbar-list li {
     list-style-type: none;
     position: relative;
@@ -214,7 +229,11 @@
     grid-gap: 0;
     z-index: -1;
   }
-
+  @media only screen and (max-width: 767px) {
+    .navbar-list.expanded {
+      display: none;
+    }
+  }
   @media only screen and (min-width: 767px) {
     nav {
       height: 125px;
@@ -232,6 +251,10 @@
     }
     .navbar-list li {
       position: inherit;
+    }
+    .navbar-list.mobile-show,
+    .navbar-list.mobile-hide {
+      display: none;
     }
     .logo {
       max-width: 600px;

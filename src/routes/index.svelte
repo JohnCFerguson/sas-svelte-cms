@@ -12,7 +12,7 @@
 />
 
 <div class='center'>
-  <a role='button' class='book-now-button' href='book'>Book Now</a>
+  <a class='book-now-button' href='/book'>Book Now</a>
 </div>
 
 

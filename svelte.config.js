@@ -3,7 +3,8 @@ import adapter from '@sveltejs/adapter-netlify'
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    target: '#svelte',
+    // No longer required
+    // target: '#svelte',
     adapter: adapter(),
     vite: {
       server: {
