@@ -6,8 +6,7 @@
   import {onMount} from 'svelte'
   import Instagram from 'svelte-material-icons/Instagram.svelte'
 
-  let path
-  $: ({path} = $page)
+  let path = $page.url?.pathname
   // Show mobile icon and display menu
   let showMobileMenu = false
 
@@ -33,7 +32,7 @@
 
   // Attach media query listener on mount hook
   onMount(() => {
-    const mediaListener = window.matchMedia('(max-width: 767px)')
+    const mediaListener = window.matchMedia('(max-width: 821px)')
 
     mediaListener.addEventListener('Screen Watch', mediaQueryHandler)
   })
@@ -64,7 +63,7 @@
             </li>
           {:else}
             <li>
-              <a on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
+              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
             </li>
           {/if}
         {/each}
@@ -79,7 +78,7 @@
             </li>
           {:else}
             <li>
-              <a on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
+              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}>{item.label}</a>
             </li>
           {/if}
         {/each}
@@ -98,36 +97,37 @@
     z-index: 0;
   }
   nav {
-    height: 75px;
+    height: 5em;
     background-color: #f1dcd4;
     box-shadow: 1px 2px 5px #000;
   }
   .grand-child {
-    height: 75px
+    height: 5em
   }
   a {
     font-family: 'StayClassyDuoSerif';
   }
   .wrapper, .placeholder {
-    height: 75px;
+    height: 5em;
   }
   .inner {
     max-width: 980px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-bottom: 2em;
+    padding-left: .5em;
+    padding-right: 2em;
     box-sizing: border-box;
     display: grid;
     align-items: center;
     height: 100%;
   }
   .mobile-icon {
-    width: 25px;
-    height: 14px;
+    width: 2em;
+    height: 1em;
     position: absolute;
     cursor: pointer;
     right: 0px;
-    margin-right: 20px;
+    margin-right: .5em;
+    margin-top: 2em;
   }
 
   .mobile-icon:after,
@@ -217,9 +217,9 @@
     color: #8a807b;
     text-decoration: none;
     display: block;
-    height: 45px;
+    height: 4em;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 1em;
     font-size: 20px;
     text-align: center;
   }
@@ -229,12 +229,12 @@
     grid-gap: 0;
     z-index: -1;
   }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 821px) {
     .navbar-list.expanded {
       display: none;
     }
   }
-  @media only screen and (min-width: 767px) {
+  @media only screen and (min-width: 821px) {
     nav {
       height: 125px;
     }

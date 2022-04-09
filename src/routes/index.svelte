@@ -7,14 +7,13 @@
 </svelte:head>
 
 <Image
-  src='/logos/S+S-Logo-0221_Full_Color_Logo_Vertical_Cropped.png'
-  alt='Sand and Sagebrush full color logo'
+  src="/logos/S+S-Logo-0221_Full_Color_Logo_Vertical_Cropped.png"
+  alt="Sand and Sagebrush full color logo"
 />
 
-<div class='center'>
-  <a class='book-now-button' href='/book'>Book Now</a>
+<div class="center">
+  <a class="book-now-button" href="/book">Book Now</a>
 </div>
-
 
 <style>
   .center {
