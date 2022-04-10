@@ -7,8 +7,6 @@ export async function get() {
 		"teammates": ${getTeamQuery()},
   }`)
 
-  console.log(data)
-
   if (data) {
     return {
       status: 200,

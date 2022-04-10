@@ -12,7 +12,7 @@
 <Footer />
 
 <style>
-  :global(a) {
+  :global(a, h1) {
     border-bottom: none;
     font-family: 'StayClassyDuoSerif';
   }
@@ -28,7 +28,7 @@
     font-family: 'StayClassyDuoSerif';
     src: url('./../fonts/StayClassyDuoSerif.otf') format('otf');
   }
-:global(a) {
+  :global(a) {
     font-family: 'StayClassyDuoSerif';
   }
 </style>

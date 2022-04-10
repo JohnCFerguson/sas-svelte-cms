@@ -4,11 +4,9 @@
 
 <script>
   import {onMount} from 'svelte'
-  import Image from 'svelte-image'
   import Instagram from 'svelte-material-icons/Instagram.svelte'
 
-  let path
-  $: ({path} = $page)
+  let path = $page.url?.pathname
   // Show mobile icon and display menu
   let showMobileMenu = false
 
@@ -21,8 +19,9 @@
   ]
 
   // Mobile menu click event handler
-  const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu)
-
+  const handleMobileIconClick = () => {
+    showMobileMenu = !showMobileMenu
+  }
   // Media match query handler
   const mediaQueryHandler = (e) => {
     // Reset mobile state
@@ -42,29 +41,48 @@
 <header>
   <nav class="grid-container">
     <div class="grid-child logo">
-      <Image
-        class="logo"
-        src="/logos/S+S-Logo-0221_Full Color Logo Horizontal .png"
-        alt="Sand and Sagebrush Logo"
-        sizes=[300,500]
-        breakpoints=[767]
-      />
+      <a href="/">
+        <img
+          class="logo"
+          src="/logos/S+S-Logo-0221_Full Color Logo Horizontal .png"
+          alt="Sand and Sagebrush Logo"
+        />
+      </a>
     </div>
     <div class="inner grid-child">
-      <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
+      <div on:click={handleMobileIconClick} class={`mobile-icon ${showMobileMenu ? 'active' : ''}`}>
         <div class="middle-line" />
       </div>
-      <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+      <ul class={`navbar-list expanded`}>
         {#each navItems as item}
           {#if item.label == 'Insta'}
             <li>
-              <a href={item.href}>
+              <a on:click={handleMobileIconClick} href={item.href}>
                 <Instagram color="#8a807b" size="2em" />
               </a>
             </li>
           {:else}
             <li>
-              <a href={item.href}>{item.label}</a>
+              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}
+                >{item.label}</a
+              >
+            </li>
+          {/if}
+        {/each}
+      </ul>
+      <ul class={`navbar-list ${showMobileMenu ? 'mobile-show' : 'mobile-hide'}`}>
+        {#each navItems as item}
+          {#if item.label == 'Insta'}
+            <li>
+              <a on:click={handleMobileIconClick} href={item.href}>
+                <Instagram color="#8a807b" size="2em" />
+              </a>
+            </li>
+          {:else}
+            <li>
+              <a aria-current={path === item.href} on:click={handleMobileIconClick} href={item.href}
+                >{item.label}</a
+              >
             </li>
           {/if}
         {/each}
@@ -79,40 +97,48 @@
     src: url('./../fonts/StayClassyDuoSerif.otf') format('otf');
   }
   .logo {
-    height: 75px;
-    max-width: 300px;
+    max-width: 350px;
+    z-index: 0;
   }
   nav {
-    height: 75px;
+    height: 5em;
     background-color: #f1dcd4;
+    box-shadow: 1px 2px 5px #000;
   }
   .grand-child {
-    height: 75px
+    height: 5em;
   }
   a {
     font-family: 'StayClassyDuoSerif';
   }
+  .wrapper,
+  .placeholder {
+    height: 5em;
+  }
   .inner {
     max-width: 980px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-bottom: 2em;
+    padding-left: 0.5em;
+    padding-right: 2em;
     box-sizing: border-box;
     display: grid;
     align-items: center;
     height: 100%;
   }
   .mobile-icon {
-    width: 25px;
-    height: 14px;
+    width: 2em;
+    height: 1em;
     position: absolute;
     cursor: pointer;
     right: 0px;
-    margin-right: 20px;
+    margin-right: 0.5em;
+    margin-top: 2em;
   }
 
   .mobile-icon:after,
   .mobile-icon:before,
   .middle-line {
+    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -166,10 +192,9 @@
     width: 100%;
     justify-content: space-between;
     margin: 0;
-    padding: 0 40px;
   }
 
-  .navbar-list.mobile {
+  .navbar-list.mobile-show {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     display: block;
@@ -177,8 +202,8 @@
     bottom: 0;
     left: 0;
     z-index: 999999;
+    padding-inline-start: 0;
   }
-
   .navbar-list li {
     list-style-type: none;
     position: relative;
@@ -197,9 +222,9 @@
     color: #8a807b;
     text-decoration: none;
     display: block;
-    height: 45px;
+    height: 4em;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 1em;
     font-size: 20px;
     text-align: center;
   }
@@ -207,9 +232,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0;
+    z-index: -1;
   }
-
-  @media only screen and (min-width: 767px) {
+  @media only screen and (max-width: 769px) {
+    .navbar-list.expanded {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 769px) {
     nav {
       height: 125px;
     }
@@ -226,9 +256,14 @@
     }
     .navbar-list li {
       position: inherit;
+      margin-right: .5em;
+    }
+    .navbar-list.mobile-show,
+    .navbar-list.mobile-hide {
+      display: none;
     }
     .logo {
-      max-width: 500px;
+      max-width: 600px;
       /* position: fixed;
       left: 0;
       top: 0; */
