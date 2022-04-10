@@ -132,7 +132,7 @@
     cursor: pointer;
     right: 0px;
     margin-right: 0.5em;
-    margin-top: 2em;
+    align-items: center;
   }
 
   .mobile-icon:after,
@@ -192,7 +192,6 @@
     width: 100%;
     justify-content: space-between;
     margin: 0;
-    padding: 0 40px;
   }
 
   .navbar-list.mobile-show {
@@ -203,6 +202,7 @@
     bottom: 0;
     left: 0;
     z-index: 999999;
+    padding-inline-start: 0;
   }
   .navbar-list li {
     list-style-type: none;
@@ -239,7 +239,7 @@
       display: none;
     }
   }
-  @media only screen and (min-width: 821px) {
+  @media only screen and (min-width: 767px) {
     nav {
       height: 125px;
     }

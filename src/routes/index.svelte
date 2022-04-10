@@ -22,9 +22,9 @@
   .book-now-button {
     border-style: solid;
     border-width: 1px;
-    border-radius: 5px;
-    padding: 7px 21px;
-    font-size: 0.9375rem;
+    border-radius: 1em;
+    padding: 1em 2em;
+    font-size: 12pt;
     color: rgb(138, 128, 123);
     text-decoration: none;
   }

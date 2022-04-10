@@ -25,7 +25,9 @@
     <caption translate="no">
       Built by:
         <br />
-        <span lang="en-US" translate="no">{metadata.development.company}</span>  
+        <a href="https://www.jferguson.info">
+          <img class="unfergettable-logo" src="/logos/UnFergettableDesignsLogo-ReSized.png" alt="UnFergettable Designs L.L.C." />
+        </a>
         <br />
       <a href={`mailto:${metadata.development.devEmail}`}>{metadata.development.devEmail}</a>
     </caption>
@@ -36,10 +38,14 @@
   footer {
     font-family: 'StayClassyDuoSerif';
     text-align: center;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
     align-items: center;
     justify-content: center;
     gap: 1em;
+    position: static;
+  }
+  .unfergettable-logo {
+    max-width: 10em;
   }
 </style>
