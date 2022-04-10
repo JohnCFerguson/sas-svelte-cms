@@ -32,7 +32,7 @@
 
   // Attach media query listener on mount hook
   onMount(() => {
-    const mediaListener = window.matchMedia('(max-width: 821px)')
+    const mediaListener = window.matchMedia('(max-width: 767px)')
 
     mediaListener.addEventListener('Screen Watch', mediaQueryHandler)
   })
@@ -132,7 +132,7 @@
     cursor: pointer;
     right: 0px;
     margin-right: 0.5em;
-    align-items: center;
+    margin-top: 2em;
   }
 
   .mobile-icon:after,
@@ -234,12 +234,12 @@
     grid-gap: 0;
     z-index: -1;
   }
-  @media only screen and (max-width: 821px) {
+  @media only screen and (max-width: 769px) {
     .navbar-list.expanded {
       display: none;
     }
   }
-  @media only screen and (min-width: 767px) {
+  @media only screen and (min-width: 769px) {
     nav {
       height: 125px;
     }
@@ -256,6 +256,7 @@
     }
     .navbar-list li {
       position: inherit;
+      margin-right: .5em;
     }
     .navbar-list.mobile-show,
     .navbar-list.mobile-hide {
