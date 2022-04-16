@@ -60,7 +60,7 @@
   <hr />
   <MaterialApp>
     {#each teammates as teammate}
-      {#if teammate.name === 'Maddy Farnell'}
+      {#if teammate.name === 'Maddie Farnell'}
         <div class="d-flex justify-center mt-4 mb-4" bind:clientWidth={width}>
           {#if width != undefined}
             <Card style="min-width:250px;">

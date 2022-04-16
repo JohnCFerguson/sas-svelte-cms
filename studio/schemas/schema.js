@@ -5,13 +5,9 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document schemas
-import author from './documents/author'
-import category from './documents/category'
-import post from './documents/post'
 import teammate from './documents/teammate'
 
 // Object types
-import authorReference from './objects/authorReference'
 import teammateReference from './objects/teammateReference'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -23,14 +19,10 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    post,
-    category,
-    author,
     teammate,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    authorReference,
     teammateReference
   ])
 })
