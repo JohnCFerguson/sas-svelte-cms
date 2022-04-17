@@ -256,7 +256,7 @@
     }
     .navbar-list li {
       position: inherit;
-      margin-right: .5em;
+      margin-right: 0.5em;
     }
     .navbar-list.mobile-show,
     .navbar-list.mobile-hide {
