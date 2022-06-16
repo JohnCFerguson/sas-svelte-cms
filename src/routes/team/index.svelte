@@ -1,5 +1,5 @@
 <script context="module">
-  export const load = async ({url, fetch}) => {
+  export const load = async ({fetch}) => {
     try {
       const url = `/team/team.json`
       const res = await fetch(url)

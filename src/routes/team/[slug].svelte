@@ -5,7 +5,7 @@
       const res = await fetch(url)
       const {teammate} = await res.json()
 
-      if (employee) {
+      if (teammate) {
         return {
           props: {
             teammate
@@ -27,7 +27,6 @@
   import Link from '$lib/Link.svelte'
   import ImageBlock from '$lib/ImageBlock.svelte'
   import AuthorBlock from '$lib/AuthorBlock.svelte'
-  import PostsGrid from '$lib/PostsGrid.svelte'
   import SanityImage from '$lib/SanityImage.svelte'
 
   export let teammate
