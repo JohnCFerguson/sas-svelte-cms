@@ -12,26 +12,26 @@
     "clean-install": "rmdir node_modules /s && npm install"
   },
   "devDependencies": {
-    "@portabletext/svelte": "^0.2.0",
-    "@sveltejs/adapter-netlify": "^1.0.0-next.51",
-    "@sveltejs/kit": "1.0.0-next.310",
-    "eslint": "^8.13.0",
+    "@portabletext/svelte": "^1.0.1",
+    "@sveltejs/adapter-netlify": "^1.0.0-next.64",
+    "@sveltejs/kit": "1.0.0-next.350",
+    "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-svelte3": "^3.4.1",
-    "prettier": "^2.6.2",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
-    "svelte": "^3.47.0",
+    "svelte": "^3.48.0",
     "svelte-image-gallery": "^1.5.0",
-    "svelte-lightbox": "^0.6.1"
+    "svelte-lightbox": "^0.6.2"
   },
   "type": "module",
   "dependencies": {
-    "@mdi/js": "^6.6.96",
-    "@sanity/client": "^3.3.0",
+    "@mdi/js": "^6.7.96",
+    "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "svelte-image": "^0.2.9",
     "svelte-material-icons": "^2.0.2",
-    "svelte-material-ui": "^6.0.0-beta.15",
+    "svelte-material-ui": "^6.0.0-beta.16",
     "svelte-materialify": "^0.3.11"
   }
 }
