@@ -2,8 +2,8 @@
   const metadata = {
     title: 'Sand & Sagebrush Salon and Spa',
     contact: {
-      phoneDisplay: '1 (775) 397-0932',
-      phoneNumber: '17753970932',
+      phoneDisplay: '1 (775) 777-1539',
+      phoneNumber: '17757771539',
       email: 'maddie@sandandsagebrush.com',
       address: '461 Idaho St. Elko, NV 89801'
     },
